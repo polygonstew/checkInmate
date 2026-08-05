@@ -1,0 +1,6 @@
+@checkInmate_HostAddress = http://localhost:5197
+
+GET {{checkInmate_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
