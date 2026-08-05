@@ -1,11 +1,13 @@
-## dotnet new webapi -n checkInmate -o checkInmate
+## false start 
+
+* dotnet new webapi -n checkInmate -o checkInmate
 
 right off the bat I get an error that says. 
 
 * warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
 
 I know it is a caution error, but still want to fix it if I can through a simple terminal command.
-* dotnet add package Microsoft.OpenApi <----- Fixes it.
+* dotnet add package Microsoft.OpenApi <----- Fixes it. UPDATE: It does not fix it. Nearly posted it to Slack :(
 
 Nope, broke it. Now I have 2 serious red errors. 
   checkInmate net10.0 failed with 2 error(s) (11.0s)
@@ -26,4 +28,8 @@ HA! I just remove the warning visually. Seems cheap, but in my csproj I add this
     <!--- doesn't have a simple fix , supressing -->
     <NoWarn>$(NoWarn);NU1903</NoWarn>
 
+    * Beleive it or not the link it gives to the github advisory explains. 
+      https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+
 ## it begins
+
