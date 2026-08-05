@@ -90,3 +90,6 @@ example JSON layout from get
 
 so I need to get this figured out, I am sure there plenty of forms out there I can reference and will site if I find a really good one, but I think there has to be a universal layout on this simple stuff
 
+for inmemory I will use Entity framework 
+`dotnet add package Microsoft.EntityFrameworkCore.InMemory`
+
