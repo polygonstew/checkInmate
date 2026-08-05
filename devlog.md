@@ -52,6 +52,30 @@ throws this a run point, i think it's a security deal with https. that is above 
 
 
 adding scalar
-* dotnet add package Scalar.AspNetCore
+<code>dotnet add package Scalar.AspNetCore</code>
 
 ok now I setup Inmate.cs and all the desired inputs but one. I want to add an image as well. Maybe even a cam link that can take a photo or use one uploaded. If one isn't available have a standin.png. 
+<code>
+example JSON layout from get
+JSON
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "1985-05-15",
+    "sex": "M",
+    "charge": "Burglary",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "dateOfBirth": "1992-11-20",
+    "sex": "F",
+    "charge": "Assault",
+    "status": "Active"
+  }
+]
+</code>
