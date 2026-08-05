@@ -1,7 +1,8 @@
+using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -10,32 +11,27 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    // Add Scalar to the pipeline
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// root endpoint // layout of site before heavy lifting
+app.MapGet("/", () => "checkInmate API is online and listening.");
+app.MapGet("/firstrun", () => "first run page");
+app.MapGet("/intake", () => "intake inmate");
+app.MapGet("/update", () => "update current inmates");
+app.MapGet("/release", () => "release form");
+app.MapGet("/search", () => "search for current inmates");
 
-app.MapGet("/weatherforecast", () =>
+// Example Endpoint Setup
+app.MapGet("/api/inmates", () => new[]
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    new { Id = 1, Name = "John Doe", Status = "Active" },
+    new { Id = 2, Name = "Jane Smith", Status = "Released" }
 })
-.WithName("GetWeatherForecast");
+.WithName("GetInmates")
+.WithTags("Inmate Management Operations");
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
