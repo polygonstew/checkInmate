@@ -1,13 +1,14 @@
+# Devlog for checkInmate
 ## false start 
 
-* dotnet new webapi -n checkInmate -o checkInmate
+* 'dotnet new webapi -n checkInmate -o checkInmate'
 
-right off the bat I get an error that says. 
+### right off the bat I get an error that says. 
 
 * warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
 
 I know it is a caution error, but still want to fix it if I can through a simple terminal command.
-* dotnet add package Microsoft.OpenApi <----- Fixes it. UPDATE: It does not fix it. Nearly posted it to Slack :(
+* 'dotnet add package Microsoft.OpenApi' <----- Fixes it. UPDATE: It does not fix it. Nearly posted it to Slack :(
 
 Nope, broke it. Now I have 2 serious red errors. 
   checkInmate net10.0 failed with 2 error(s) (11.0s)
@@ -31,6 +32,7 @@ HA! I just remove the warning visually. Seems cheap, but in my csproj I add this
     * Beleive it or not the link it gives to the github advisory explains. 
       https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
 
+# Starting
 ## it begins
 
 to kick it off I want to add landing page so users don't get confuse when following the link when running.
@@ -52,12 +54,13 @@ throws this a run point, i think it's a security deal with https. that is above 
 
 
 adding scalar
-<code>dotnet add package Scalar.AspNetCore</code>
+'dotnet add package Scalar.AspNetCore'
 
 ok now I setup Inmate.cs and all the desired inputs but one. I want to add an image as well. Maybe even a cam link that can take a photo or use one uploaded. If one isn't available have a standin.png. 
-<console>
+
 example JSON layout from get
 
+'''
 JSON
 [
   {
@@ -79,4 +82,10 @@ JSON
     "status": "Active"
   }
 ]
-</console>
+'''
+
+# Layout
+## GUI / Database
+
+so I need to get this figured out, I am sure there plenty of forms out there I can reference and will site if I find a really good one, but I think there has to be a universal layout on this simple stuff
+
