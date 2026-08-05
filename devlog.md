@@ -1,14 +1,14 @@
 # Devlog for checkInmate
 ## false start 
 
-* 'dotnet new webapi -n checkInmate -o checkInmate'
+* `dotnet new webapi -n checkInmate -o checkInmate`
 
 ### right off the bat I get an error that says. 
 
 * warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
 
 I know it is a caution error, but still want to fix it if I can through a simple terminal command.
-* 'dotnet add package Microsoft.OpenApi' <----- Fixes it. UPDATE: It does not fix it. Nearly posted it to Slack :(
+* `dotnet add package Microsoft.OpenApi` <----- Fixes it. UPDATE: It does not fix it. Nearly posted it to Slack :(
 
 Nope, broke it. Now I have 2 serious red errors. 
   checkInmate net10.0 failed with 2 error(s) (11.0s)
@@ -54,14 +54,14 @@ throws this a run point, i think it's a security deal with https. that is above 
 
 
 adding scalar
-'dotnet add package Scalar.AspNetCore'
+`dotnet add package Scalar.AspNetCore`
 
 ok now I setup Inmate.cs and all the desired inputs but one. I want to add an image as well. Maybe even a cam link that can take a photo or use one uploaded. If one isn't available have a standin.png. 
 
 example JSON layout from get
 
-'''
-JSON
+
+```JSON
 [
   {
     "id": 1,
@@ -81,8 +81,8 @@ JSON
     "charge": "Assault",
     "status": "Active"
   }
-]
-'''
+]```
+
 
 # Layout
 ## GUI / Database
