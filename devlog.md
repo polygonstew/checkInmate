@@ -45,7 +45,7 @@ note: (- app.MapGet is very useful -)
 
 decided to layout the site a bit using the following commands
 
-!{ ERROR: warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+! ERROR: warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
       Failed to determine the https port for redirect.
 
 throws this a run point, i think it's a security deal with https. that is above my current pay grade. will be back to see if I can remove it.
@@ -55,8 +55,9 @@ adding scalar
 <code>dotnet add package Scalar.AspNetCore</code>
 
 ok now I setup Inmate.cs and all the desired inputs but one. I want to add an image as well. Maybe even a cam link that can take a photo or use one uploaded. If one isn't available have a standin.png. 
-<code>
+<console>
 example JSON layout from get
+
 JSON
 [
   {
@@ -78,4 +79,4 @@ JSON
     "status": "Active"
   }
 ]
-</code>
+</console>
