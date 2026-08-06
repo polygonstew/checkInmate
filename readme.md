@@ -18,7 +18,7 @@ To build and run this application locally on your machine, follow these steps:
 2. Open a terminal and navigate to the root directory.
 3. To start the backend API, navigate to the API folder and run:
    `dotnet run`
-4. The API will typically be hosted at `http://localhost:5197`.
+4. The API will typically be hosted at `http://localhost:5000` or `http://localhost:5001`.
 5. Open a second terminal window. Navigate to the Client folder and run the client application.
 6. To execute the test suite, navigate to the Tests folder and run:
    `dotnet test`

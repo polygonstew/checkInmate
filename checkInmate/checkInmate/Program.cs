@@ -1,4 +1,5 @@
 using Scalar.AspNetCore;
+using checkInmate;
 
 var builder = WebApplication.CreateBuilder(args);
 

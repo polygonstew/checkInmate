@@ -3,8 +3,7 @@
 
 * `dotnet new webapi -n checkInmate -o checkInmate`
 
-### right off the bat I get an error that says. 
-
+### right off the bat I get an error
 * warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
 
 I know it is a caution error, but still want to fix it if I can through a simple terminal command.
@@ -52,12 +51,12 @@ decided to layout the site a bit using the following commands
 
 throws this a run point, i think it's a security deal with https. that is above my current pay grade. will be back to see if I can remove it.
 
-
+## scalar
 adding scalar
 `dotnet add package Scalar.AspNetCore`
 
 ok now I setup Inmate.cs and all the desired inputs but one. I want to add an image as well. Maybe even a cam link that can take a photo or use one uploaded. If one isn't available have a standin.png. 
-
+## format
 example JSON layout from get
 
 
@@ -93,3 +92,68 @@ so I need to get this figured out, I am sure there plenty of forms out there I c
 for inmemory I will use Entity framework 
 `dotnet add package Microsoft.EntityFrameworkCore.InMemory`
 
+
+# ROADMAP to v1
+
+### Phase 1: Infrastructure and Data Binding (In Progress)
+#### This phase establishes the bedrock of the application. You have already completed the bulk of this.
+
+[x] Initialize the Minimal API project (checkInmate).
+
+[x] Configure Scalar for API endpoint documentation.
+
+[x] Define the Inmate C# data model.
+
+[x] Configure the Entity Framework Core in-memory database (InmateDb).
+
+[ ] Next Step: Seed the database with two or three dummy inmate records on startup so you have data to test immediately.
+
+### Phase 2: Core API Endpoints (CRUD)
+#### This phase focuses entirely on Program.cs. You will map out the routes the client application will eventually call.
+
+[ ] Create (POST): Build the /inmates/booking endpoint to accept a JSON payload, assign a unique ID, and save the new inmate to the database.
+
+[ ] Read (GET): Build two endpoints. One to fetch the entire active roster (/inmates), and one to fetch a specific inmate by their ID (/inmates/{id}).
+
+[ ] Update (PUT): Build the /inmates/{id} endpoint to allow modifications to an existing record (e.g., updating their housing status or adding new charges).
+
+[ ] Delete (DELETE): Build the /inmates/{id} endpoint to purge a record from the in-memory database.
+
+### Phase 3: The Client Application
+#### With the API fully functional and testable via Scalar, you will build the user-facing application that consumes it.
+
+[ ] Initialize the consumer project (e.g., a C# Console App or a basic HTML/JS directory) inside the repository.
+
+[ ] Construct the main layout and navigation loop (the terminal menu or the web dashboard).
+
+[ ] Implement the HTTP request logic (using HttpClient in C# or fetch in JavaScript) to connect to your local API port.
+
+[ ] Wire the user inputs to the API payloads, allowing an intake officer to add, view, edit, and remove records from the UI.
+
+### Phase 4: Automated Testing Suite
+#### This phase fulfills the strict Capstone requirement for proving your code works programmatically.
+
+[ ] Create a new testing project within the solution (using xUnit or NUnit).
+
+[ ] Install Microsoft.AspNetCore.Mvc.Testing to spin up a test version of your API in the background.
+
+[ ] Write a test asserting that a valid POST request successfully creates an inmate.
+
+[ ] Write a test asserting that a GET request returns the expected data.
+
+[ ] Write tests for invalid execution paths (e.g., requesting an inmate ID that does not exist returns a 404 Not Found).
+
+### Phase 5: v1.0 Release and Submission
+#### The final pass to ensure everything meets the graduation requirements.
+
+[ ] Perform a clean build of the entire solution to ensure no compiler warnings or errors remain.
+
+[ ] Execute the test suite one final time to confirm full passage.
+
+[ ] Complete the required sections in the README.md (Project Retrospective and Future Roadmap).
+
+[ ] Push all three projects (API, Client, Tests) to your single GitHub repository.
+
+[ ] Submit the repository link before the noon deadline.
+
+___
