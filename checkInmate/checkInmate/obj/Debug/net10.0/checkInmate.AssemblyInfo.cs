@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("checkInmate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bd1056f2b08f6da28fc57a8e97ae7e5514c91da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99e136f55c53d3c1000604a2a6d52da679d3b767")]
 [assembly: System.Reflection.AssemblyProductAttribute("checkInmate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("checkInmate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
