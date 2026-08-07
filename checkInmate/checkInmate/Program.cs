@@ -1,13 +1,47 @@
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using checkInmate;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddControllers();  
 // Add services to the container.
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
-
+// --- SEED DATA BLOCK ---
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<InmateDb>();
+    db.Database.EnsureCreated();
+    
+    if (!db.Inmates.Any())
+    {
+        db.Inmates.AddRange(
+            new Inmate 
+            { 
+                Id = 1, 
+                FirstName = "John", 
+                LastName = "Doe", 
+                DateOfBirth = new DateTime(1985, 5, 15), 
+                Sex = "M", 
+                Charge = "Burglary", 
+                Status = "Active" 
+            },
+            new Inmate 
+            { 
+                Id = 2, 
+                FirstName = "Jane", 
+                LastName = "Smith", 
+                DateOfBirth = new DateTime(1992, 11, 20), 
+                Sex = "F", 
+                Charge = "Assault", 
+                Status = "Active" 
+            }
+        );
+        db.SaveChanges();
+    }
+}
+// -----------------------
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -35,4 +69,5 @@ app.MapGet("/api/inmates", () => new[]
 .WithName("GetInmates")
 .WithTags("Inmate Management Operations");
 
+app.MapControllers();
 app.Run();
