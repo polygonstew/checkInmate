@@ -2,7 +2,7 @@
 
 > **SYSTEM STATUS:** ONLINE  
 > **BUILD:** 1.0.0 (Check In Mate - August 2026)  
-
+> **[ACCESS RAW DEV LOG](devlog.md)**
 checkInmate is a full-stack, RESTful API and terminal-driven booking engine. Designed with a modular architecture, it handles complete CRUD (Create, Read, Update, Delete) operations through a C# backend, visually represented by a brutalist, UNIX-style web interface. 
 
 While currently themed for a Department of Corrections intake loop, the underlying data structure functions as a scalable blueprint for any time-and-slot check-in system (e.g., hospitality, event management, or ticketing).
