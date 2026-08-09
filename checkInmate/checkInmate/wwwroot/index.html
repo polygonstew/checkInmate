@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkInmate - Terminal</title>
+    <!-- Links to your separate stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DOC // checkInmate_OS</h1>
+            <p>> SYSTEM STATUS: ONLINE</p>
+            <p>> <a href="/scalar/v1" target="_blank">[ACCESS API DOCS]</a></p>
+        </header>
+
+        <hr>
+
+        <section class="module">
+            <h2>> ACTIVE ROSTER</h2>
+            <button onclick="fetchInmates()">[ REFRESH DATABASE ]</button>
+            <div id="inmate-list" class="data-display">
+                <p class="muted">// Awaiting command...</p>
+            </div>
+        </section>
+
+        <section class="module">
+            <h2>> NEW INTAKE FORM</h2>
+            <form id="intake-form">
+                <div class="form-group">
+                    <label>FIRST NAME:</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>LAST NAME:</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label>DOB (YYYY-MM-DD):</label>
+                    <input type="date" id="dob" required>
+                </div>
+                <div class="form-group">
+                    <label>SEX:</label>
+                    <select id="sex">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>CHARGE:</label>
+                    <input type="text" id="charge" required>
+                </div>
+                <div class="form-group">
+                    <label>STATUS:</label>
+                    <input type="text" id="status" value="Active" required>
+                </div>
+                <button type="submit">[ EXECUTE BOOKING ]</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Links to your separate JavaScript logic -->
+    <script src="app.js"></script>
+</body>
+</html>

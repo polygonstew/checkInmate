@@ -250,6 +250,7 @@ for inmemory I will use Entity framework
 `dotnet add package Microsoft.EntityFrameworkCore.InMemory`
 
 for the GUI I am just going to use the html with links so you can see the API running/is running.
+### HTML/CSS
 I can sit and write CSS and HTML to make it look probably pretty rough. So I am going to use Gemini to spit out something, but I do understand HTML5/CSS3/JS.
 Understanding C# is my goal, so I don't think generated HTML/CSS should be a focus if I can pass over it and make it look good as well.
 ```html
@@ -301,8 +302,32 @@ Understanding C# is my goal, so I don't think generated HTML/CSS should be a foc
 ```
 
 
+To my understanding the above can be way cleaner. I am going to use wwwroot to use real HTML/CSS/JS files and keep the HTML out of my sharp files. So... lets see.
+
+folder needed - checkInmate/wwwroot 
+files - index.html, style.css, and app.js
+# create.tre
+!! I am going to use my addon for VScode called Create.tre. I write out my files like below
+```
+/wwwroot
+    index.html
+    style.css
+    app.js
+```
+
+now I can highligh that tree and right click use Create.tre. It makes a "materialized" folder holding all the empty files witin the directory.
+
+// Tells the server to automatically look for a file named "index.html"
+app.UseDefaultFiles(); 
+// Tells the server it is allowed to serve files from a folder named "wwwroot"
+app.UseStaticFiles();
+
+## GUI
+
+I want the gui to be either UNIX looking in an HTML site with a console built into the bottom. So you have buttons and fields, yet a console overide at the bottom for quick look ups. Not sure what to go with, nice looking DMV style .gov website or a very barebones readable UNIX vision. Later I would like to make everything on the backend custimizable for it to be more open to being other entry software for say a hotel/motel or event checkin system. Using Inmates as a demonstration more or less.
 
 
+see files for more in depth code for the frontend page.
 
 
 
@@ -310,8 +335,14 @@ Understanding C# is my goal, so I don't think generated HTML/CSS should be a foc
 
 
 #  Unit Testing
+* dotnet new xunit -n checkInmate.Tests // Creating the test unit.
+one thing about coding is the naming conventions and reapets of the same words, but not. I don't have to name it that, but I did.
+
 ## InmateApi.Tests
-'''csharp
+
+dotnet add package Microsoft.AspNetCore.Mvc.Testing 
+you gotta add the package for it to work.
+```csharp
 using Microsoft.AspNetCore.Mvc.Testing; // Brings in the WebApplicationFactory
 using System.Net; // Allows us to check HTTP Status Codes like 200 OK
 
@@ -360,6 +391,10 @@ public class InmateApiTests : IClassFixture<WebApplicationFactory<Program>>
     }
 }
 ```
+so for now I understand that API's use httpd to make a server like area that can process, store, remove, and create data securely over the web/lan.
+that is a running start.
+
+
 
 
 

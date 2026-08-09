@@ -116,5 +116,13 @@ app.MapGet("/update", () => "update current inmates");
 app.MapGet("/release", () => "release form");
 app.MapGet("/search", () => "search for current inmates");
 
+//HTML file use
+// Tells the server to automatically look for a file named "index.html"
+app.UseDefaultFiles(); 
+// Tells the server it is allowed to serve files from a folder named "wwwroot"
+app.UseStaticFiles();
+
+
 app.MapControllers();
 app.Run();
+public partial class Program { }
