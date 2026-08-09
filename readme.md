@@ -43,4 +43,4 @@ dotnet run
 
 This capstone project was developed with the assistance of artificial intelligence for educational acceleration and technical scaffolding. For full transparency regarding AI usage, scope, and human authorship, please initialize the disclosure document:
 
-> **[ACCESS AI USAGE DISCLOSURE](AI_DISCLOSURE.md)**
+> **[ACCESS AI USAGE DISCLOSURE](ai_disclosure.md)**
