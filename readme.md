@@ -1,34 +1,45 @@
-# Inmate Intake and Booking System (Capstone Project)
+# DOC // checkInmate_OS
 
-## Project Purpose
-This repository contains the final Capstone project for the Code:You software development program. It is a comprehensive system designed to handle the intake, booking, and management of inmate records for a hypothetical correctional facility. 
+> **SYSTEM STATUS:** ONLINE  
+> **BUILD:** 1.0.0 (Check In Mate - August 2026)  
 
-The solution demonstrates full-stack capabilities, separating a robust backend API from a streamlined client interface, all validated by an automated testing suite.
+checkInmate is a full-stack, RESTful API and terminal-driven booking engine. Designed with a modular architecture, it handles complete CRUD (Create, Read, Update, Delete) operations through a C# backend, visually represented by a brutalist, UNIX-style web interface. 
 
-## Architecture
-This single repository contains three distinct projects:
-1. **checkInmate (API)**: A C# ASP.NET Web API handling the core business logic and in-memory data storage.
-2. **checkInmate.Client**: A lightweight consumer application used by intake officers to interact with the API (Create, Read, Update, and Delete records).
-3. **checkInmate.Tests**: An automated testing suite ensuring the reliability of the application's execution paths.
+While currently themed for a Department of Corrections intake loop, the underlying data structure functions as a scalable blueprint for any time-and-slot check-in system (e.g., hospitality, event management, or ticketing).
 
-## Setup and Execution
-To build and run this application locally on your machine, follow these steps:
+---
 
-1. Clone this repository.
-2. Open a terminal and navigate to the root directory.
-3. To start the backend API, navigate to the API folder and run:
-   `dotnet run`
-4. The API will typically be hosted at `http://localhost:5000` or `http://localhost:5001`.
-5. Open a second terminal window. Navigate to the Client folder and run the client application.
-6. To execute the test suite, navigate to the Tests folder and run:
-   `dotnet test`
+## Core Architecture
 
-## Project Retrospective
-*(To be completed upon project conclusion)*
-* What I learned from this project and the course overall.
+* **Backend:** ASP.NET Core Web API (.NET 10.0)
+* **Data Access:** Entity Framework Core (In-Memory Database)
+* **Frontend:** Vanilla HTML5 / CSS3 / JavaScript (Zero-dependency)
+* **Testing:** xUnit Integration Testing (`WebApplicationFactory`)
+* **API Documentation:** Scalar
 
-## Future Roadmap
-*(To be completed upon project conclusion)*
-* If I had more time, the features I would add or modify.
+---
 
-*Note: The documentation and structure of this repository were developed with the assistance of an AI co-pilot.*
+## System Interface
+
+The user interface operates on a dual-input philosophy:
+1. **Standard GUI:** Form-based intake loops and click-to-release buttons for standard users.
+2. **Terminal Override:** An active, JavaScript-driven command-line console docked at the bottom of the screen. Power users can issue direct server requests (e.g., `fetch`, `clear`) and view parsed JSON response logs in real-time.
+
+---
+
+## Execution Commands
+
+Ensure the .NET 10.0 SDK is installed on your host machine.
+
+### Boot Sequence
+Navigate to the primary API directory and initialize the server:
+```bash
+cd checkInmate
+dotnet run
+
+
+## ⚖️ System Compliance & AI Disclosure
+
+This capstone project was developed with the assistance of artificial intelligence for educational acceleration and technical scaffolding. For full transparency regarding AI usage, scope, and human authorship, please initialize the disclosure document:
+
+> **[ACCESS AI USAGE DISCLOSURE](AI_DISCLOSURE.md)**
