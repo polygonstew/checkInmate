@@ -405,13 +405,13 @@ that is a running start.
 ### Phase 1: Infrastructure and Data Binding (In Progress)
 #### This phase establishes the bedrock of the application. You have already completed the bulk of this.
 
-[x] Initialize the Minimal API project (checkInmate).
+[ ] Initialize the Minimal API project (checkInmate).
 
-[x] Configure Scalar for API endpoint documentation.
+[ ] Configure Scalar for API endpoint documentation.
 
-[x] Define the Inmate C# data model.
+[ ] Define the Inmate C# data model.
 
-[x] Configure the Entity Framework Core in-memory database (InmateDb).
+[ ] Configure the Entity Framework Core in-memory database (InmateDb).
 
 [ ] Next Step: Seed the database with two or three dummy inmate records on startup so you have data to test immediately.
 
