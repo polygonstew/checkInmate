@@ -41,9 +41,22 @@ button {
     color: #00ff00;
     border: 1px solid #00ff00;
     padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: inherit;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.btn-release {
+    border-color: #ff0000;
+    color: #ff0000;
+    margin-top: 10px;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+.btn-release:hover {
+    background-color: #ff0000;
+    color: #0a0a0a;
 }
 
 .module {
@@ -53,19 +66,61 @@ button {
 .data-display {
     border: 1px solid #004400;
     padding: 15px;
-    min-height: 100px;
     background-color: #051405;
+    /* Forces the scrollbar if too full */
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+/* Custom Brutalist Scrollbar */
+.data-display::-webkit-scrollbar {
+    width: 12px;
+}
+.data-display::-webkit-scrollbar-track {
+    background: #0a0a0a; 
+    border-left: 1px solid #004400;
+}
+.data-display::-webkit-scrollbar-thumb {
+    background: #00ff00; 
 }
 
 .inmate-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     border-bottom: 1px dashed #004400;
-    padding-bottom: 10px;
+    padding: 10px;
     margin-bottom: 10px;
+    transition: background-color 0.2s;
 }
 
-.muted {
-    color: #006600;
+.inmate-card:hover {
+    background-color: #002200;
+    cursor: crosshair;
 }
+
+.inmate-photo {
+    width: 80px;
+    height: 80px;
+    border: 1px dashed #00ff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.7em;
+    background-color: #0a0a0a;
+    color: #004400;
+    margin-right: 15px;
+}
+
+.inmate-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.muted { color: #006600; }
 
 .form-group {
     margin-bottom: 10px;
@@ -78,7 +133,40 @@ input, select {
     background-color: #0a0a0a;
     color: #00ff00;
     border: 1px solid #00ff00;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: inherit;
     padding: 5px;
     width: 60%;
+}
+
+/* Console Layout */
+.console-module {
+    margin-top: 40px;
+    border-top: 2px solid #00ff00;
+    padding-top: 20px;
+}
+
+#console-output {
+    height: 120px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+#console-output p { margin: 2px 0; }
+
+.console-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#console-input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkInmate - Terminal</title>
-    <!-- Links to your separate stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -55,12 +54,22 @@
                     <label>STATUS:</label>
                     <input type="text" id="status" value="Active" required>
                 </div>
-                <button type="submit">[ EXECUTE BOOKING ]</button>
+                <button type="submit" id="submit-intake">[ EXECUTE BOOKING ]</button>
             </form>
+        </section>
+
+        <section class="console-module">
+            <div id="console-output">
+                <p>checkInmate_OS v1.0.0 initialized.</p>
+                <p>System ready. Type 'help' for commands.</p>
+            </div>
+            <div class="console-input-line">
+                <span class="prompt">root@checkinmate ~> </span>
+                <input type="text" id="console-input" autocomplete="off">
+            </div>
         </section>
     </div>
 
-    <!-- Links to your separate JavaScript logic -->
     <script src="app.js"></script>
 </body>
 </html>

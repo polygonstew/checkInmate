@@ -56,8 +56,8 @@ if (app.Environment.IsDevelopment())
     // Add Scalar to the pipeline
     app.MapScalarApiReference();
 }
-
-app.UseHttpsRedirection();
+// Removed because it's trying to push HTTPS, stops the warnings in the API run
+// app.UseHttpsRedirection(); 
 
 // root endpoint // layout of site before heavy lifting
 // app.MapGet("/", () => "checkInmate API is online and listening.");
