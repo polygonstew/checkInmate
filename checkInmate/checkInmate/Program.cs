@@ -5,11 +5,10 @@ using checkInmate;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();  
 
-// THIS IS THE CRITICAL LINE THAT WAS MISSING
 builder.Services.AddDbContext<InmateDb>(options =>
     options.UseInMemoryDatabase("InmateList"));
 
-// Add services to the container.
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -61,12 +60,6 @@ if (app.Environment.IsDevelopment())
 
 // root endpoint // layout of site before heavy lifting
 // app.MapGet("/", () => "checkInmate API is online and listening.");
-app.MapGet("/firstrun", () => "first run page");
-app.MapGet("/intake", () => "intake inmate");
-app.MapGet("/update", () => "update current inmates");
-app.MapGet("/release", () => "release form");
-app.MapGet("/search", () => "search for current inmates");
-
 //HTML file use
 // Tells the server to automatically look for a file named "index.html"
 app.UseDefaultFiles(); 
