@@ -36,7 +36,7 @@ Navigate to the primary API directory and initialize the server:
 ```bash
 cd checkInmate
 dotnet run
-
+```
 
 ## ⚖️ System Compliance & AI Disclosure
 
