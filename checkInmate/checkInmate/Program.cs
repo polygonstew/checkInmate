@@ -59,55 +59,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//using html for landing page when click from console
-app.MapGet("/", () => Results.Content(@"
-    <!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>checkInmate - System Root</title>
-        <style>
-            body { 
-                background-color: #0a0a0a; 
-                color: #00ff00; 
-                font-family: 'Courier New', Courier, monospace; 
-                padding: 40px; 
-            }
-            .container {
-                border: 2px solid #00ff00;
-                padding: 20px;
-                max-width: 600px;
-            }
-            h1 { 
-                border-bottom: 1px solid #00ff00; 
-                padding-bottom: 10px; 
-                text-transform: uppercase;
-            }
-            a { 
-                color: #00ff00; 
-                text-decoration: none; 
-                font-weight: bold;
-            }
-            a:hover {
-                background-color: #00ff00;
-                color: #0a0a0a;
-            }
-        </style>
-    </head>
-    <body>
-        <div class='container'>
-            <h1>Department of Corrections</h1>
-            <p>> INTAKE API : ONLINE</p>
-            <p>> VERSION : 1.0.0</p>
-            <p>> STATUS : AWAITING COMMAND...</p>
-            <br />
-            <p><a href='/scalar/v1'>[ ACCESS SYSTEM DOCUMENTATION (SCALAR) ]</a></p>
-        </div>
-    </body>
-    </html>
-", "text/html"));
-
 // root endpoint // layout of site before heavy lifting
 // app.MapGet("/", () => "checkInmate API is online and listening.");
 app.MapGet("/firstrun", () => "first run page");
