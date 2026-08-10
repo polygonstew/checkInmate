@@ -170,3 +170,17 @@ input, select {
     border: none;
     outline: none;
 }
+
+.btn-edit {
+    border-color: #ffaa00;
+    color: #ffaa00;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+.btn-edit:hover {
+    background-color: #ffaa00;
+    color: #0a0a0a;
+}

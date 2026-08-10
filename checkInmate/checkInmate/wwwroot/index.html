@@ -27,6 +27,9 @@
         <section class="module">
             <h2>> NEW INTAKE FORM</h2>
             <form id="intake-form">
+                <!-- Hidden field to track the ID during an update -->
+                <input type="hidden" id="edit-inmate-id">
+                
                 <div class="form-group">
                     <label>FIRST NAME:</label>
                     <input type="text" id="firstName" required>
@@ -54,7 +57,9 @@
                     <label>STATUS:</label>
                     <input type="text" id="status" value="Active" required>
                 </div>
+                
                 <button type="submit" id="submit-intake">[ EXECUTE BOOKING ]</button>
+                <button type="button" id="cancel-edit" style="display: none;" onclick="cancelEdit()">[ CANCEL UPDATE ]</button>
             </form>
         </section>
 
