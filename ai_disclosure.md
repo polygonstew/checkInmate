@@ -10,9 +10,6 @@ This document serves as a formal declaration that artificial intelligence (Googl
 ## 2. Scope of AI Assistance
 All core application logic, feature requirements, and architectural workflows were conceptualized and directed by the human author. The AI assistant was leveraged to accelerate development and bridge knowledge gaps in the following specific areas:
 
-* **Syntax Translation & ORM:** Translating fundamental MySQL database concepts into C# Entity Framework Core object-relational mapping syntax.
-* **Backend Scaffolding:** Generating standard boilerplate for the ASP.NET Core Web API, including `InmateController.cs` RESTful routing and `Program.cs` service registration.
-* **Frontend Connectivity:** Assisting with the asynchronous JavaScript `fetch()` logic required to wire the custom HTML/CSS GUI to the backend endpoints.
 * **Test Automation Setup:** Providing the structural boilerplate and environmental configuration for the xUnit integration testing suite utilizing `WebApplicationFactory`.
 * **Debugging & Diagnostics:** Analyzing compiler errors, diagnosing JSON payload mismatches (e.g., ISO 8601 date formatting), and explaining C# architectural best practices.
 

@@ -1,4 +1,4 @@
-# DOC // checkInmate_OS
+# DOC // checkInmate
 
 > **SYSTEM STATUS:** ONLINE  
 > **BUILD:** 1.0.0 (Check In Mate - August 2026)  
